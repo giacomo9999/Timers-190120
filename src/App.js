@@ -1,26 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Container, Card, Header } from "semantic-ui-react";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Container text>
+        <br />
+        <style>{`html, body {background-color: #252839 !important;}}`}</style>
+
+        <Card centered={true}>
+          <Card.Content>
+            <Header as="h3" textAlign="center" color="grey">
+              Timers App
+            </Header>
+          </Card.Content>
+        </Card>
+      </Container>
     );
   }
 }
