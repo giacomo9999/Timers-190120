@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import { Container, Card, Header } from "semantic-ui-react";
+import { Grid, Header } from "semantic-ui-react";
+import ToggleableTimerForm from "./components/toggleableTimerForm.component";
+import EditableTimerList from "./components/editableTimerList.component";
 
 class App extends Component {
   render() {
     return (
-      <Container text>
-        <br />
+      <Grid columns={4} centered>
         <style>{`html, body {background-color: #252839 !important;}}`}</style>
 
-        <Card centered={true}>
-          <Card.Content>
-            <Header as="h3" textAlign="center" color="grey">
-              Timers App
-            </Header>
-          </Card.Content>
-        </Card>
-      </Container>
+        <Grid.Column color="orange">
+          <br />
+          <Header as="h3">Timers Dashboard</Header>
+          <EditableTimerList />
+          <ToggleableTimerForm isOpen={true} />
+        </Grid.Column>
+      </Grid>
     );
   }
 }
