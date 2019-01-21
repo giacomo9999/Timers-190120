@@ -10,8 +10,8 @@ class ToggleableTimerForm extends React.Component {
       return (
         <Grid>
           <Grid.Row centered>
-            <Button size="mini">
-              <Icon name="plus" fitted={true}/>
+            <Button size="medium">
+              Toggleable Timer Form
             </Button>
           </Grid.Row>
         </Grid>
