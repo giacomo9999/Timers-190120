@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Icon, Button, Image } from "semantic-ui-react";
+import { Card, Button } from "semantic-ui-react";
 
 class Timer extends React.Component {
   render() {
