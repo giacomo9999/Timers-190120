@@ -7,7 +7,7 @@ class EditableTimerList extends React.Component {
     return (
       <Card fluid>
         <Card.Content>
-          <Header as="h5">Editable Timer List</Header>
+          <Header>Editable Timer List</Header>
 
           <EditableTimer
             title="Learn React"

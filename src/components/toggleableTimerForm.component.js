@@ -1,15 +1,22 @@
 import React from "react";
-import { Card, Header } from "semantic-ui-react";
+import { Grid, Button } from "semantic-ui-react";
+import TimerForm from "./timerForm.component";
 
 class ToggleableTimerForm extends React.Component {
   render() {
-    return (
-      <Card fluid>
-        <Card.Content>
-          <Header as="h5">Toggleable Timer Form</Header>
-        </Card.Content>
-      </Card>
-    );
+    if (this.props.isOpen) {
+      return <TimerForm />;
+    } else {
+      return (
+        <Grid>
+          <Grid.Row centered>
+            <Button size="mini">
+              <h2>+</h2>
+            </Button>
+          </Grid.Row>
+        </Grid>
+      );
+    }
   }
 }
 
