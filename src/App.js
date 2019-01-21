@@ -9,7 +9,7 @@ class App extends Component {
       <Grid columns={4} centered>
         <style>{`html, body {background-color: #252839 !important;}}`}</style>
 
-        <Grid.Column color="olive">
+        <Grid.Column color="blue">
           <br />
           <Header as="h3">Timers Dashboard</Header>
           <EditableTimerList />
