@@ -1,11 +1,15 @@
 import React from "react";
-import { Segment } from "semantic-ui-react";
+import { Card, Header } from "semantic-ui-react";
 
 class ToggleableTimerForm extends React.Component {
   render() {
-    return <Segment >
-        <h3>Toggleable Timer Form</h3>
-    </Segment>;
+    return (
+      <Card fluid>
+        <Card.Content>
+          <Header as="h5">Toggleable Timer Form</Header>
+        </Card.Content>
+      </Card>
+    );
   }
 }
 
