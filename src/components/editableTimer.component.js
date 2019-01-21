@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Header } from "semantic-ui-react";
+// import { Card, Header } from "semantic-ui-react";
 import TimerForm from "./timerForm.component";
 import Timer from "./timer.component";
 

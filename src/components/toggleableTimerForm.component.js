@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button } from "semantic-ui-react";
+import { Grid, Button, Icon } from "semantic-ui-react";
 import TimerForm from "./timerForm.component";
 
 class ToggleableTimerForm extends React.Component {
@@ -11,7 +11,7 @@ class ToggleableTimerForm extends React.Component {
         <Grid>
           <Grid.Row centered>
             <Button size="mini">
-              <h2>+</h2>
+              <Icon name="plus" fitted={true}/>
             </Button>
           </Grid.Row>
         </Grid>
