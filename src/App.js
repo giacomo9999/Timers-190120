@@ -65,9 +65,7 @@ class App extends Component {
   };
 
   deleteTimer = timerId => {
-    const adjTimers = this.state.timers.filter(timer => {
-      return timer.id !== timerId;
-    });
+    const adjTimers = this.state.timers.filter(timer => timer.id !== timerId);
     this.setState({ timers: adjTimers });
   };
 
