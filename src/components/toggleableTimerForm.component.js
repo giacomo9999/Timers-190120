@@ -1,3 +1,5 @@
+// parent: App.js
+
 import React from "react";
 import { Grid, Button } from "semantic-ui-react";
 import TimerForm from "./timerForm.component";
@@ -15,7 +17,7 @@ class ToggleableTimerForm extends React.Component {
   };
 
   handleFormSubmit = timer => {
-    console.log("Submitting data..." + timer.title);
+    console.log("Submitting data from TTF..." + timer.title);
     this.props.onFormSubmit(timer);
     this.setState({ editFormOpen: false });
   };

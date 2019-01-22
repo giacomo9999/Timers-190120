@@ -1,3 +1,5 @@
+// Parent: EditableTimerList
+
 import React from "react";
 import { Card } from "semantic-ui-react";
 import TimerForm from "./timerForm.component";
@@ -7,12 +9,35 @@ class EditableTimer extends React.Component {
   state = { editFormOpen: true };
 
   handleFormClose = () => {
+    // invoked from 'Cancel' button in TimerForm
     console.log("Closing edit form");
     this.setState({ editFormOpen: false });
   };
 
-  handleFormSubmit = data => {
-    console.log("Submitting data..." + data.title);
+  handleFormSubmit = timer => {
+    console.log("Submitting data from EditableTimer..." + timer.title);
+    this.props.onFormSubmit(timer);
+    this.closeForm();
+  };
+
+  handleEditClick = () => {
+    // invoked by clicking "Edit" icon
+    console.log("Opening edit form");
+    this.openForm();
+  };
+
+  // handleSubmit = timer => {
+  //   this.props.onFormSubmit(timer);
+  //   this.closeForm();
+  // };
+
+  closeForm = () => {
+    this.setState({ editFormOpen: false });
+  };
+
+  openForm = () => {
+    // invoked from handleEditClick
+    this.setState({ editFormOpen: true });
   };
 
   render() {
@@ -48,6 +73,7 @@ class EditableTimer extends React.Component {
               project={this.props.project}
               elapsed={this.props.elapsed}
               runningSince={this.props.runningSince}
+              onEditClick={this.handleEditClick}
             />
           </Card.Content>
         </Card>

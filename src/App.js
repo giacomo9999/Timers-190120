@@ -1,3 +1,5 @@
+// parent: App.js
+
 import React, { Component } from "react";
 import { Grid, Header } from "semantic-ui-react";
 import ToggleableTimerForm from "./components/toggleableTimerForm.component";
@@ -25,10 +27,13 @@ class App extends Component {
     ]
   };
 
+  // passed down as prop onFormSubmit to ToggleableTimerForm
   handleCreateFormSubmit = timer => {
+    console.log("App creating new timer...")
     this.createTimer(timer);
   };
 
+  // called by handleCreateFormSubmit
   createTimer = timer => {
     const t = NewTimer(timer);
     this.setState({ timers: this.state.timers.concat(t) });

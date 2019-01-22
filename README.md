@@ -1,1 +1,1 @@
-Timers tutorial from Fullstack.io book.
+Timers tutorial from Fullstack.io book--with components labeled as to functionality wherever possible.

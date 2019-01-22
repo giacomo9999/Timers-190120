@@ -1,3 +1,5 @@
+// parent: App.js
+
 import React from "react";
 import { Card, Header } from "semantic-ui-react";
 import EditableTimer from "./editableTimer.component";
@@ -12,6 +14,8 @@ class EditableTimerList extends React.Component {
         project={timer.project}
         elapsed={timer.elapsed}
         runningSince={timer.runningSince}
+        // onFormSubmit from App.js
+        onFormSubmit={this.props.onFormSubmit}
       />
     ));
     return (

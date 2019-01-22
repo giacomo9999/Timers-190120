@@ -1,3 +1,5 @@
+// parent: EditableTimer or ToggleableTimerForm
+
 import React from "react";
 import { Card, Header, Form, Button } from "semantic-ui-react";
 
@@ -13,14 +15,13 @@ class TimerForm extends React.Component {
   };
 
   handleSubmit = () => {
+    console.log("Submitting data from TimerForm..." + this.state.title);
     this.props.onFormSubmit({
       id: this.props.id,
       title: this.state.title,
       project: this.state.project
     });
   };
-
-
 
   render() {
     const submitText = this.props.id ? "Update" : "Create";
