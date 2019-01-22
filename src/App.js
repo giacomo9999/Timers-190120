@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid, Header } from "semantic-ui-react";
 import ToggleableTimerForm from "./components/toggleableTimerForm.component";
 import EditableTimerList from "./components/editableTimerList.component";
+import NewTimer from "./components/newTimer.component";
 const uuid = require("uuidv4");
 
 class App extends Component {
@@ -23,6 +24,16 @@ class App extends Component {
       }
     ]
   };
+
+  handleCreateFormSubmit = timer => {
+    this.createTimer(timer);
+  };
+
+  createTimer = timer => {
+    const t = NewTimer(timer);
+    this.setState({ timers: this.state.timers.concat(t) });
+  };
+
   render() {
     return (
       <Grid columns={4} centered>
@@ -30,7 +41,7 @@ class App extends Component {
         <Grid.Column color="blue">
           <Header as="h3">Timers Dashboard</Header>
           <EditableTimerList timers={this.state.timers} />
-          <ToggleableTimerForm isOpen={false} />
+          <ToggleableTimerForm onFormSubmit={this.handleCreateFormSubmit} />
         </Grid.Column>
         <br />
       </Grid>
