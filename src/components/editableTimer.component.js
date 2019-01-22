@@ -14,7 +14,7 @@ class EditableTimer extends React.Component {
     this.closeForm();
   };
 
-  // onFormSubmit: from App, to EditableTimerList, to TimerForm
+  // onFormSubmit: from App, to EditableTimerList, to TimerForm - invoked from 'Submit' Button
   handleFormSubmit = timer => {
     console.log("Submitting data from EditableTimer..." + timer.title);
     this.props.onFormSubmit(timer);

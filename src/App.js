@@ -29,8 +29,9 @@ class App extends Component {
 
   // passed down as prop onFormSubmit to ToggleableTimerForm
   handleCreateFormSubmit = timer => {
-    console.log("App creating new timer...")
+    console.log("App creating new timer...");
     this.createTimer(timer);
+    console.log(this.state);
   };
 
   // called by handleCreateFormSubmit
@@ -39,13 +40,36 @@ class App extends Component {
     this.setState({ timers: this.state.timers.concat(t) });
   };
 
+  // passed down as prop onFormSubmit to EditableTimerList
+  handleEditFormSubmit = attrs => {
+    this.updateTimer(attrs);
+  };
+
+  updateTimer = attrs => {
+    this.setState({
+      timers: this.state.timers.map(timer => {
+        if (timer.id === attrs.id) {
+          return Object.assign({}, timer, {
+            title: attrs.title,
+            project: attrs.project
+          });
+        } else {
+          return timer;
+        }
+      })
+    });
+  };
+
   render() {
     return (
       <Grid columns={4} centered>
         <style>{`html, body {background-color: #252839 !important;}}`}</style>
         <Grid.Column color="blue">
           <Header as="h3">Timers Dashboard</Header>
-          <EditableTimerList timers={this.state.timers} />
+          <EditableTimerList
+            timers={this.state.timers}
+            onFormSubmit={this.handleEditFormSubmit}
+          />
           <ToggleableTimerForm onFormSubmit={this.handleCreateFormSubmit} />
         </Grid.Column>
         <br />
