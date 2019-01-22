@@ -60,6 +60,17 @@ class App extends Component {
     });
   };
 
+  handleTrashClick = timerId => {
+    this.deleteTimer(timerId);
+  };
+
+  deleteTimer = timerId => {
+    const adjTimers = this.state.timers.filter(timer => {
+      return timer.id !== timerId;
+    });
+    this.setState({ timers: adjTimers });
+  };
+
   render() {
     return (
       <Grid columns={4} centered>
@@ -69,6 +80,7 @@ class App extends Component {
           <EditableTimerList
             timers={this.state.timers}
             onFormSubmit={this.handleEditFormSubmit}
+            onTrashClick={this.handleTrashClick}
           />
           <ToggleableTimerForm onFormSubmit={this.handleCreateFormSubmit} />
         </Grid.Column>

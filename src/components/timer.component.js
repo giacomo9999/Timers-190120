@@ -2,6 +2,11 @@ import React from "react";
 import { Card, Button } from "semantic-ui-react";
 
 class Timer extends React.Component {
+  // onTrashClick comes down as a prop from EditableTimer
+  handleTrashClick = () => {
+    this.props.onTrashClick(this.props.id);
+  };
+
   render() {
     return (
       <Card fluid>
@@ -18,7 +23,10 @@ class Timer extends React.Component {
           >
             <i className="edit icon" />
           </span>
-          <span className="right floated trash icon">
+          <span
+            className="right floated trash icon"
+            onClick={this.handleTrashClick}
+          >
             <i className="trash icon" />
           </span>
         </div>
