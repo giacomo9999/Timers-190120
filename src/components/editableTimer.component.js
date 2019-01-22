@@ -8,35 +8,32 @@ import Timer from "./timer.component";
 class EditableTimer extends React.Component {
   state = { editFormOpen: true };
 
+  // invoked from 'Cancel' button in TimerForm
   handleFormClose = () => {
-    // invoked from 'Cancel' button in TimerForm
     console.log("Closing edit form");
-    this.setState({ editFormOpen: false });
+    this.closeForm();
   };
 
+  // onFormSubmit: from App, to EditableTimerList, to TimerForm
   handleFormSubmit = timer => {
     console.log("Submitting data from EditableTimer..." + timer.title);
     this.props.onFormSubmit(timer);
     this.closeForm();
   };
 
+  // passed down to Timer
   handleEditClick = () => {
-    // invoked by clicking "Edit" icon
     console.log("Opening edit form");
     this.openForm();
   };
 
-  // handleSubmit = timer => {
-  //   this.props.onFormSubmit(timer);
-  //   this.closeForm();
-  // };
-
+  // invoked from handleFormClose and handleFormSubmit
   closeForm = () => {
     this.setState({ editFormOpen: false });
   };
 
+  // invoked from handleEditClick
   openForm = () => {
-    // invoked from handleEditClick
     this.setState({ editFormOpen: true });
   };
 
